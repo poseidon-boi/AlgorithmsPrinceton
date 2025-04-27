@@ -1,0 +1,12 @@
+*/*.txt
+*/.idea
+*/.lift
+*/*.png
+*/*.iml
+*/*.class
+*/CREDITS
+8puzzle/PuzzleChecker.java
+collinear/LineSegment.java
+percolation/*Visualizer.java
+kdtree/*Visualizer.java
+kdtree/KdTreeGenerator.java

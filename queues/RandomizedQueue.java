@@ -1,5 +1,6 @@
 import java.util.Iterator;
 import java.util.NoSuchElementException;
+import java.util.Scanner;
 
 public class RandomizedQueue<Item> implements Iterable<Item> {
 
@@ -77,7 +78,6 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
                 order[i] = order[random];
                 order[random] = temp;
             }
-            // StdRandom.shuffle(order);
         }
 
         public boolean hasNext() {
@@ -96,18 +96,27 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
     }
 
     public static void main(String[] args) {
+
+        Scanner scan = new Scanner(System.in);
         RandomizedQueue<String> randqueue = new RandomizedQueue<>();
-        System.out.println(randqueue.isEmpty());
-        randqueue.enqueue("A");
-        randqueue.enqueue("B");
-        randqueue.enqueue("C");
-        System.out.println(randqueue.sample());
-        System.out.println(randqueue.size());
-        for (String letter : randqueue)
-            System.out.print(letter + " ");
-        System.out.println();
-        System.out.println(randqueue.dequeue());
-        System.out.println(randqueue.dequeue());
-        System.out.println(randqueue.dequeue());
+
+        while (scan.hasNext())
+            randqueue.enqueue(scan.next());
+
+        for (int i = 0; i < 10; i++)
+            System.out.println(randqueue.dequeue());
+
+        // System.out.println(randqueue.isEmpty());
+        // randqueue.enqueue("A");
+        // randqueue.enqueue("B");
+        // randqueue.enqueue("C");
+        // System.out.println(randqueue.sample());
+        // System.out.println(randqueue.size());
+        // for (String letter : randqueue)
+        //     System.out.print(letter + " ");
+        // System.out.println();
+        // System.out.println(randqueue.dequeue());
+        // System.out.println(randqueue.dequeue());
+        // System.out.println(randqueue.dequeue());
     }
 }
